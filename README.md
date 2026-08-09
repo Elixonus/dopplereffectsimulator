@@ -1,4 +1,4 @@
-# doppler 🔊
+# dopplereffectsimulator 🔊
 
 ## Logo
 
