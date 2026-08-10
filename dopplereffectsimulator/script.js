@@ -238,7 +238,7 @@ function doView() {
         ctxPos.lineTo(0, 0);
         ctxPos.translate(obs.vel.x / wspd, obs.vel.y / wspd);
         ctxPos.rotate(Math.atan2(obs.vel.y, obs.vel.x));
-        ctxPos.lineTo(0, 0);
+        ctxPos.lineTo(-0.05, 0);
         ctxPos.lineWidth = 0.05;
         ctxPos.strokeStyle = "#0f0";
         ctxPos.stroke();
@@ -264,7 +264,7 @@ function doView() {
         ctxPos.lineTo(0, 0);
         ctxPos.translate(src.vel.x / wspd, src.vel.y / wspd);
         ctxPos.rotate(Math.atan2(src.vel.y, src.vel.x));
-        ctxPos.lineTo(0, 0);
+        ctxPos.lineTo(-0.05, 0);
         ctxPos.lineWidth = 0.05;
         ctxPos.strokeStyle = "#f00";
         ctxPos.stroke();
@@ -314,7 +314,7 @@ function doView() {
             ctxPos.lineTo(0, 0);
             ctxPos.translate(obs.wav.vel.x / wspd, obs.wav.vel.y / wspd);
             ctxPos.rotate(Math.atan2(obs.wav.vel.y, obs.wav.vel.x));
-            ctxPos.lineTo(0, 0);
+            ctxPos.lineTo(-0.05, 0);
             ctxPos.lineWidth = 0.05;
             ctxPos.strokeStyle = "#ff0";
             ctxPos.stroke();
