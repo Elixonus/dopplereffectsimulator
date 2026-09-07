@@ -334,61 +334,37 @@ function doPlotPrs() {
     ctxPrs.restore();
 }
 
-const preDmp = document.createElement("pre");
-preDmp.style.textAlign = "left";
-const contDmp = document.createElement("div");
-contDmp.classList.add("content");
-contDmp.appendChild(preDmp);
-const labDmp = document.createElement("h3");
-labDmp.innerText = "Dump";
-labDmp.classList.add("label");
-const panDmp = document.createElement("div");
-panDmp.classList.add("panel");
-panDmp.appendChild(labDmp);
-panDmp.appendChild(contDmp);
-const grpOut = document.createElement("div");
-grpOut.classList.add("group");
-grpOut.appendChild(panDmp);
-const hdgOut = document.createElement("h2");
-hdgOut.innerText = "Output";
-hdgOut.classList.add("heading");
-const secOut = document.createElement("div");
-secOut.classList.add("section");
-secOut.appendChild(hdgOut);
-secOut.appendChild(grpOut);
+const preTxt = document.createElement("pre");
+preTxt.style.textAlign = "left";
+const contTxt = document.createElement("div");
+contTxt.classList.add("content");
+contTxt.appendChild(preTxt);
 const btnUpd = document.createElement("button");
 btnUpd.innerText = "UPDATE";
-btnUpd.addEventListener("click", doInf);
+btnUpd.addEventListener("click", doTxt);
 btnUpd.type = "button";
 btnUpd.classList.add("button");
-const contUpd = document.createElement("div");
-contUpd.classList.add("content");
-contUpd.appendChild(btnUpd);
-const labUpd = document.createElement("h3");
-labUpd.innerText = "Output";
-labUpd.classList.add("label");
-const panUpd = document.createElement("div");
-panUpd.classList.add("panel");
-panUpd.appendChild(labUpd);
-panUpd.appendChild(contUpd);
-const grpInf = document.createElement("div");
-grpInf.classList.add("group");
-grpInf.appendChild(panUpd);
-grpInf.appendChild(secOut);
-const hdgInf = document.createElement("h2");
-hdgInf.innerText = "Info";
-hdgInf.classList.add("heading");
-const secInf = document.createElement("div");
-secInf.classList.add("section");
-secInf.appendChild(hdgInf);
-secInf.appendChild(grpInf);
-document.getElementById("main").appendChild(secInf);
+const labTxt = document.createElement("h3");
+labTxt.innerText = "RAW TEXT";
+labTxt.classList.add("label");
+const panTxt = document.createElement("div");
+panTxt.classList.add("panel");
+panTxt.appendChild(labTxt);
+panTxt.appendChild(btnUpd);
+panTxt.appendChild(contTxt);
+const grpCalc = document.createElement("div");
+grpCalc.classList.add("group");
+grpCalc.appendChild(panTxt);
+const hdgCalc = document.createElement("h2");
+hdgCalc.innerText = "Calculations";
+hdgCalc.classList.add("heading");
+const secCalc = document.createElement("div");
+secCalc.classList.add("section");
+secCalc.appendChild(hdgCalc);
+secCalc.appendChild(grpCalc);
+document.getElementById("main").appendChild(secCalc);
 
-function doInf() {
-    doDmp();
-}
-
-function doDmp() {
+function doTxt() {
     let html = "";
     if (obs.wav !== null) {
         html += "parameters<br>"
@@ -418,7 +394,7 @@ function doDmp() {
         let f_o = obs.wav.frq * (wspd - v_o) / (wspd + v_s);
         html += "f_o = " + f_o.toFixed(3) + " Hz<br>";
     }
-    preDmp.innerHTML = html;
+    preTxt.innerHTML = html;
 }
 
 const btnSndHjkNon = document.createElement("button");
@@ -458,7 +434,6 @@ function setSndHjkHpy() {
     hjk = 1;
     fixSndHjk();
 }
-
 
 let hpyBdySong = [
     1, 0, 0,
